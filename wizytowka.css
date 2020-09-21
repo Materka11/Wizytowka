@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#page {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(5vw, 1fr));
+    overflow: hidden;
+}
+
+#home {
+    display: grid;
+    grid-column: 1 / -1;
+    height: 100vh;
+    grid-template-columns: repeat(auto-fill, minmax(5vw, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(5vh, 1fr));
+}
+
+#aboutUs {
+    display: grid;
+    grid-column: 1 / -1;
+    height: 100vh;
+    grid-template-columns: repeat(auto-fill, minmax(5vw, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(5vh, 1fr));
+}
