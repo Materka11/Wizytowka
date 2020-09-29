@@ -8,34 +8,96 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 </head>
-
 <body>
     <div id="page">
         <div id="home">
-                <div class="blue first"></div>
-                <div class="red second"></div>
-                <div class="third"></div>
-                <div class="blue fourth"></div>
-                <div class="fiveth"></div>
-                <div class="sixth red"></div>
-                <img id="siema" src="img/logomain.png">
-                <h1>Tworzenie stron WWW</h1>
-                <h2>kompleksowe wykonanie stron internetowych</h2>
-                <a href="#" class="icon-button facebook"><i class="icon-facebook"></i></a>
+            <div class="blue first"></div>
+            <div class="red second"></div>
+            <div class="third"></div>
+            <div class="blue fourth"></div>
+            <div class="fiveth"></div>
+            <div class="sixth red"></div>
+            <img src="img/logomain.png">
+            <h1>Tworzenie stron WWW</h1>
+            <h2>kompleksowe wykonanie stron internetowych</h2>
+            <a href="#" class="icon-button facebook"><i class="icon-facebook"></i></a>
             <div id="circle">
                 <ul>
-                 <li><a href="#" class="firstA">O nas</a></li>
-                 <li><a href="#" class="secondA">Realizacje</a></li>
-                 <li><a href="#" class="thirdA">Kontakt</a></li>
-                 <div id="line"></div>
+                    <li><a href="#" class="firstA">O nas</a></li>
+                    <li><a href="#" class="secondA">Realizacje</a></li>
+                    <li><a href="#" class="thirdA">Kontakt</a></li>
+                    <div id="line"></div>
                 </ul>
             </div>
         </div>
-        <div id="aboutUs"></div>
-        <div id="portfolio"></div>
-        <div id="contact"></div>
+        <div id="pinContainer">
+        <div id="slideContainer">
+            <div id="aboutUs" class="panel">
+                <div class="wrapper">
+                <div class="mail">    
+                <div class="cover"></div>
+                <div class="letter">
+                    <h1>O nas</h1>
+                    <p>Specjalnością naszego zespołu jest tworzenie stron WWW zgodnych z najnowszymi standardami i trendami.<br> Podczas procesu budowy strony stawiamy na:</p>
+                    <ul>
+                        <li>indywidualne podejście do każdego z naszych klientów</li>
+                        <li>opracowywanie stron od podstaw</li>
+                        <li>tworzenie w oparciu o najnowsze technologie JAVASCRIPT/CSS3/HTML5/JQUERY</li>
+                        <li>nie szablonowe rozwiązania</li>
+                        <li>wysoka jakość wykonanych usług</li>
+                        <li>budowanie długotrwałych relacji</li>
+                    </ul>
+                </div>    
+                </div>
+                </div>
+            </div>
+            <div id="portfolio" class="panel"></div>
+            <div id="contact"></div>
+        </div>
+        </div>
         <footer></footer>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/debug.addIndicators.min.js"></script>
+    <script>
+        var controller = new ScrollMagic.Controller();
+        
+        $(function() {
+            var scene = new ScrollMagic.Scene({triggerElement:"#aboutUs", triggerHook: 0.5})
+            .setClassToggle(".cover", "move")
+            .addTo(controller)
+        });
+        
+        $(function() {
+            var scene = new ScrollMagic.Scene({triggerElement:"#aboutUs", triggerHook: 0.5})
+            .setClassToggle(".letter", "move")
+            .addTo(controller)
+        });
+        
+         $(function(){
+            var slides = new TimelineMax()
+            
+            .to("#slideContainer", 0.5, {z: -100})
+            .to("#slideContainer", 1, {x:"-33.33%"})
+            .to("#slideContainer", 0.5, {z:0})
+            
+            
+            .to("#slideContainer", 1, {y:"100%"})
+            
+            
+            var scene = new ScrollMagic.Scene({
+                triggerElement: "#pinContainer",
+                triggerHook: "onLeave",
+                duration: "400%"
+            })
+            .setPin("#pinContainer")
+            .setTween(slides)
+            .addTo(controller)
+        })
+    </script>
 </body>
 </html>
 <script src="wizytowka.js"></script>
