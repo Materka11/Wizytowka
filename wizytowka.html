@@ -5,16 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="wizytowka.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div id="page">
         <div id="home"></div>
-        <div id="aboutUs"></div>
-        <div id="portfolio"></div>
-        <div id="contact"></div>
+        <div id="pinContainer">
+        <div id="slideContainer">
+        <div id="aboutUs" class="panel">
+                <div class="wrapper">
+                <div class="mail">    
+                <div class="cover"></div>
+                <div class="letter">
+                    <h1>O nas</h1>
+                    <p>Specjalnością naszego zespołu jest tworzenie stron WWW zgodnych z najnowszymi standardami i trendami.<br> Podczas procesu budowy strony stawiamy na:</p>
+                    <ul>
+                        <li>indywidualne podejście do każdego z naszych klientów</li>
+                        <li>opracowywanie stron od podstaw</li>
+                        <li>tworzenie w oparciu o najnowsze technologie JAVASCRIPT/CSS3/HTML5/JQUERY</li>
+                        <li>nie szablonowe rozwiązania</li>
+                        <li>wysoka jakość wykonanych usług</li>
+                        <li>budowanie długotrwałych relacji</li>
+                    </ul>
+                </div>    
+                </div>
+                </div>
+            </div>
+        <div id="portfolio" class="panel"></div>
+            <div id="contact"></div>
+        </div>
+        </div>
         <footer></footer>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/debug.addIndicators.min.js"></script>
+    <script>
+        var controller = new ScrollMagic.Controller();
+        
+        $(function() {
+            var scene = new ScrollMagic.Scene({triggerElement:"#aboutUs", triggerHook: 0.5})
+            .setClassToggle(".cover", "move")
+            .addTo(controller)
+        });
+        
+        $(function() {
+            var scene = new ScrollMagic.Scene({triggerElement:"#aboutUs", triggerHook: 0.5})
+            .setClassToggle(".letter", "move")
+            .addTo(controller)
+        });
+        
+         $(function(){
+            var slides = new TimelineMax()
+            
+            .to("#slideContainer", 0.5, {z: -150})
+            .to("#slideContainer", 1, {x:"-33.33%"})
+            .to("#slideContainer", 0.5, {z:0})
+            
+            
+            .to("#slideContainer", 1, {y:"100%"})
+            
+            
+            var scene = new ScrollMagic.Scene({
+                triggerElement: "#pinContainer",
+                triggerHook: "onLeave",
+                duration: "400%"
+            })
+            .setPin("#pinContainer")
+            .setTween(slides)
+            .addTo(controller).addIndicators();
+        })
+    </script>
 </body>
 </html>
 <script src="wizytowka.js"></script>

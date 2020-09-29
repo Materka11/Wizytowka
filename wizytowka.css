@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: "Roboto Slab", serif;
 }
 
 #page {
@@ -21,6 +22,165 @@
     display: grid;
     grid-column: 1 / -1;
     height: 100vh;
+    grid-template-columns: repeat(auto-fill, minmax(3vw, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(3vh, 1fr));
+    background-color: #4285F4;
+}
+
+#portfolio {
+    grid-column: 1 / -1;
+    left: 100vw;
+    background-color: red;
+}
+
+#contact {
+    display: grid;
+    grid-column: 1 / -1;
+    height: 100vh;
     grid-template-columns: repeat(auto-fill, minmax(5vw, 1fr));
     grid-template-rows: repeat(auto-fill, minmax(5vh, 1fr));
+    background-color: yellow;
+    position: absolute;
+    right: 100vw;
+    bottom: 100vh;
+    width: 100vw;
 }
+
+#aboutUs .wrapper {
+    position: absolute;
+    width: 1240px;
+    height: 500px;
+    top: 30vh;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+#aboutUs .mail {
+    width: 1240px;
+    height: 500px;
+    background: #EA4335;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+#aboutUs .mail:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-left: 600px solid transparent;
+    border-right: 600px solid #EA4335;
+    border-top: 250px solid transparent;
+    border-bottom: 250px solid #EA4335;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 5;
+}
+
+#aboutUs .mail:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-left: 1000px solid #EC5446;
+    border-right: 100px solid transparent;
+    border-top: 400px solid transparent;
+    border-bottom: 100px solid #EC5446;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 4;
+}
+
+#aboutUs .cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-left: 620px solid transparent;
+    border-right: 620px solid transparent;
+    border-top: 260px solid #EC5446;
+    border-bottom: 100px solid transparent;
+    z-index: 6;
+    transform-origin: top;
+    transform:rotateX(0deg);
+    transition: all 1s 1.5s ease; 
+}
+
+#aboutUs .letter {
+    position: absolute;
+    z-index: 3;
+    top: 0px;
+    left: 10px;
+    background: #dedede;
+    width: 1220px;
+    height: 500px;
+    border-radius: 20px;
+    transition: all 1s .5s ease;    
+}
+
+
+/*#aboutUs .mail:hover .cover{
+    transform: rotateX(180deg);
+    transition: all 1s 1s ease;
+}
+
+#aboutUs .mail:hover  .letter{
+    top:-245px;
+    transition: all 2s 2s ease;
+}*/
+
+#aboutUs .cover.move {
+    transform: rotateX(180deg);
+    transition: all 1s .5s ease;
+}
+
+#aboutUs .letter.move {
+    top:-245px;
+    transition: all 1s 1.5s ease;
+}
+
+#aboutUs .letter h1 {
+    text-align: center;
+    margin: 20px 400px 0 ;
+    font-size: 40px;   
+    border-bottom: solid red 3px;
+}
+
+#aboutUs .letter p {
+    font-size: 18px;
+    margin: 30px 50px 0;
+}
+
+#aboutUs .letter ul {
+    margin: 20px 160px 0;
+    font-size: 18px;
+}
+
+#pinContainer {
+    width: 100vw;
+    height: 100vh;
+    -webkit-perspective:1000;
+    perspective: 1000;
+}
+
+#slideContainer {
+    width: 300%;
+    height: 100vh;
+    position: absolute;
+    
+}
+
+.panel {
+    height: 100vh;
+    width: 33.33%;
+    float: left;
+    position: absolute;
+}
+
+
+
+
+
