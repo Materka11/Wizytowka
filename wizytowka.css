@@ -2,12 +2,14 @@
     margin: 0;
     padding: 0;
     font-family: 'Roboto Slab', serif;
+    scroll-behavior: smooth;
 }
 
 #page {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(5vw, 1fr));
     overflow: hidden;
+    margin-bottom: 200px
 }
 
 #home {
@@ -39,11 +41,27 @@
     height: 100vh;
     grid-template-columns: repeat(auto-fill, minmax(5vw, 1fr));
     grid-template-rows: repeat(auto-fill, minmax(5vh, 1fr));
-    background-color: yellow;
+    background-color: #3D3D3D;
     position: absolute;
     right: 100vw;
     bottom: 100vh;
     width: 100vw;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 200px;  
+    background: #FCCC43;
+    z-index: -1;
+    display: none;
+    grid-template-columns: repeat(auto-fill, minmax(3vw, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(4vh, 1fr));
+}
+
+footer.display {
+    display: grid;
 }
 
 #home .blue {
@@ -120,6 +138,11 @@
     margin: 0 0 0 20px
 }
 /*ikona*/
+#home .facebook {
+    right: 3vh;
+    top: 5vh;
+}
+
 .facebook {
     font-size: 30px;
     text-align: center;
@@ -129,10 +152,8 @@
     color: #3B5998;
     margin: 0 10px;
     position: absolute;
-    right: 3vh;
     text-align: center;
     z-index: 99;
-    top: 5vh;
     padding: 20px 30px;
     transition: all .1s ease;
 }
@@ -152,7 +173,7 @@
     grid-template-rows: repeat(auto-fill, minmax(2vh, 1fr));
     animation: animationOpacity 1.5s 3s ease forwards;
     opacity: 0;
-     z-index: 3;
+    z-index: 3;
 }
 
 #circle ul {
@@ -171,6 +192,7 @@
     margin: 0 0 0 20px;
     padding: 7px 0 0 20px;
     transition: all 0.2s ease;
+    cursor: pointer
 }
 
 #circle #line {
@@ -365,4 +387,245 @@
     width: 33.33%;
     float: left;
     position: absolute;
+}
+
+#contact #word {
+    grid-column: 3 / 6;
+    grid-row: 7 / 9;
+    background-color: #3D3D3D;
+    border: solid white 5px;
+    color: white;
+    font-size: 60px;
+    text-align: center;
+    position: relative;
+    transform-style: preserve-3d; 
+}
+
+#contact #word:before {
+    content: "";
+    position: absolute;
+    width: 15vw;
+    height: 10vh;
+    background-color: #FCCC43;
+    transform: translateZ(-1px);
+    right: 40px;
+    bottom: 40px
+}
+
+#contact article {
+    grid-column: 2 / -12;
+    grid-row: 10 / -3;
+    background-color: #3D3D3D;
+    border: solid white 5px;
+}
+
+footer .facebook {
+    grid-column: -4;
+    grid-row: -4;
+    margin: 20px 0 0
+}
+
+footer img {
+    width: 100%;
+    grid-column: 16 / -16;
+    grid-row: 1;
+}
+
+footer h1 {
+    grid-column: 1 / -1;
+    grid-row: -2 / -1;
+    text-align: center;
+    font-size: 17px;
+}
+
+/*formularz*/
+
+.form {
+    grid-column: -9;
+    grid-row: 7;
+    border: solid white 5px;
+    width: 20vw;
+    height: 45vh;
+    padding: 5rem;
+    color: white;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.form:before {
+    content: "";
+    position: absolute;
+    width: 20vw;
+    height: 45vh;
+    padding: 5rem;
+    background-color: #FCCC43;
+    transform: translateZ(-1px);
+    left: -50px;
+    top: -50px
+}
+
+.form:after {
+    content: "";
+    position: absolute;
+    width: 20vw;
+    height: 45vh;
+    padding: 5rem;
+    background-color: #3D3D3D;
+    transform: translateZ(-1px);
+    left: 0px;
+    top: 0px
+}
+
+.form .form-row {
+    margin-bottom: 2rem;
+}
+
+.form .form-row:last-child {
+    margin-bottom: 0;
+}
+
+.form input,
+.form textarea {
+    border: 1px solid #bbb;
+    display: block;
+    width: 100%;
+    color: #666;
+    padding: .5rem .3rem;
+    font-size: 1rem;
+    margin: 
+}
+
+.form textarea {
+    height: 20rem;
+}
+
+.form label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.form .submit-btn {
+    padding: 1rem 2rem;
+    cursor: pointer;
+    background: #FCCC43;
+    border: 0;
+    border-radius: 0.2rem;
+    color: #FFF;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: 0.3s background-color;
+    display: block;
+    margin: 0 auto
+}
+
+@media screen and (max-width: 500px) {
+    .form .submit-btn {
+        display: block;
+        width: 100%;
+    }
+}
+
+/* ---------------------------------------------------- */
+/* walidacja formularza JS */
+/* ---------------------------------------------------- */
+.form input.field-error,
+.form textarea.field-error {
+    border-color: #FCCC43;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255,99,71, 0.3);
+}
+.form-error-text {
+    color: #FCCC43;
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+.form-error-inline .form-error-text {
+    display: none;
+}
+
+
+/* ---------------------------------------------------- */
+/* sukces wysylania */
+/* ---------------------------------------------------- */
+.form-send-success {
+    text-align:center;
+    font-size:2rem;
+    font-weight:bold;
+    border:1px solid #eee;
+    color:#333;
+    padding:10rem 0;
+    margin:3rem auto;
+    max-width:40rem; 
+}
+
+.form-send-error {
+    padding: 3em;
+    border: 1px solid #ddd;
+    display:inline-block;
+    padding:1rem 2rem;
+    color:red;
+}
+
+@media screen and (max-width:500px) {
+    .form .send-error {
+        text-align:center;
+        display: block;
+    }
+}
+
+.form-send-success strong {
+    display:block;
+    margin-bottom:0.5rem;
+}
+
+.form-send-error strong {
+    display: block;
+    font-size: 2.5em;
+    color: tomato;
+    margin-bottom: 0.3em;
+}
+
+.form-send-success span {
+    font-size:1rem;
+    color:#888;
+    font-weight:normal;
+    display: block;
+}
+.form-send-error span {
+
+}
+
+.form .honey-row {
+    display:none;
+}
+
+.loading {
+    position: relative;
+    pointer-events: none;
+    opacity:0.5;
+}
+
+.loading::after {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-right-color: rgba(0,0,0,0.7);
+    transform: translate(-50%, -50%) rotate(0deg);
+    content:"";
+    animation: rotateSingleLoading 0.3s infinite linear;
+    z-index: 10;
+}
+
+@keyframes rotateSingleLoading {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
