@@ -28,9 +28,12 @@
 }
 
 #portfolio {
+    display: grid;
     grid-column: 1 / -1;
     left: 100vw;
-    background-color: red;
+    background-color: white;
+    grid-template-columns: repeat(auto-fill, minmax(1vw, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(1vh, 1fr));
 }
 
 #contact {
@@ -365,4 +368,113 @@
     width: 33.33%;
     float: left;
     position: absolute;
+}
+
+#portfolio .kafelka1 { /*lewy górny róg*/
+    display: grid;
+    grid-column: 4 / -60;
+    grid-row: 4 / -50;
+    background-color: #FBBC05;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+#portfolio .kafelka1 img {
+    width: 110%;
+    
+    display: block;
+    margin: 0 auto;
+    opacity: 0;
+}
+
+#portfolio .kafelka1:hover {
+    transform: rotateX(180deg);
+    transition: transform 2s ease;
+}
+
+#portfolio .kafelka1:hover img {
+    transform: rotateX(-180deg);
+    transition: transform 2s 1s ease;
+    transition: opacity 2s 1s ease;
+    opacity: 1;
+}
+#portfolio .kafelka2 { /*lewy dolny róg*/
+    display: grid;
+    grid-column: 4 / -60;
+    grid-row: 56 / -4;
+    background-color: #34A853;
+    border-radius: 2px;
+}
+
+#portfolio .kafelka2:hover {
+    background-color: #4285F4;
+    transform: rotateY(180deg);
+    transition: all 2s ease;
+}
+
+#portfolio .kafelka3 { /*środek góra*/
+    display: grid;
+    grid-column: 44 / -34;
+    grid-row: 4 / -38;
+    background-color: #4285F4;
+    border-radius: 2px;
+}
+
+#portfolio .kafelka3:hover {
+    background-color: #34A853;
+    transform: rotateX(180deg);
+    transition: all 2s ease;
+}
+
+#portfolio .kafelka4 { /*środek dół*/
+    display: grid;
+    grid-column: 44 / -22;
+    grid-row: 68 / -4;
+    background-color: #FBBC05;
+    border-radius: 2px;
+}
+
+#portfolio .kafelka4:hover {
+    background-color: #4285F4;
+    transform: rotateX(180deg);
+    transition: all 2s ease;
+}
+
+#portfolio .kafelka5 { /*prawy dół*/
+    display: grid;
+    grid-column: -4 / -20;
+    grid-row: 68 / -4;
+    background-color: #4285F4;
+    border-radius: 2px;
+}
+
+#portfolio .kafelka5:hover {
+    background-color: #34A853;
+    transform: rotateY(180deg);
+    transition: all 2s ease;
+}
+
+#portfolio .kafelka6 { /*prawy dół*/
+    display: grid;
+    grid-column: -32 / -4;
+    grid-row: 4 / -60;
+    background-color: #34A853;
+    border-radius: 2px;
+}
+
+#portfolio .kafelka6:hover {
+    background-color: #FBBC05;
+    transform: rotateX(180deg);
+    transition: all 2s ease;
+}
+
+#portfolio h1 {
+    background-color: ;
+    text-align: center;
+    display: grid;
+    grid-column: -6 / -28;
+    grid-row: 49 / -43;
+    font-size: 50px;
+    text-transform: uppercase;
+    border: solid #3D3D3D 5px;
 }

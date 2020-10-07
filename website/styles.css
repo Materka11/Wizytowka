@@ -1,0 +1,648 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+#page {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(1080px, 1fr));
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+header {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-row: 1;
+    grid-template-columns: repeat(auto-fill, minmax(25px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(25px, 1fr));
+    font-size: 20px;
+    background-color: unset;
+    background-image: linear-gradient(110deg, rgb(255, 216, 41) 55%, rgb(255, 216, 41), rgb(255, 255, 255), rgb(255, 255, 255) 55%);
+    height: 100vh;
+}
+
+#wioski {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    grid-template-columns: repeat(auto-fill, minmax(25px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(25px, 1fr));
+    background-color: unset;
+    background-image: linear-gradient(130deg, rgb(255, 255, 255), rgb(255, 255, 255) 68%, rgb(255, 216, 41) 68%, rgb(255, 216, 41));
+    height: 100vh
+}
+
+#bijuu {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-row: 3;
+    grid-template-columns: repeat(auto-fill, minmax(25px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(25px, 1fr));
+    background-color: unset;
+    background-image: linear-gradient(50deg, rgb(255, 216, 41) 68%, rgb(255, 216, 41),  rgb(255, 255, 255), rgb(255, 255, 255) 68% );
+    height: 100vh
+}
+
+#klany {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-row: 4;
+    grid-template-columns: repeat(auto-fill, minmax(25px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(25px, 1fr));
+    background-color: white;
+    height: 100vh;
+   
+}
+
+#dojutsu {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-row: 5;
+    grid-template-columns: repeat(auto-fill, minmax(25px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(25px, 1fr));
+    background-color: rgb(255, 216, 41);
+    height: 100vh;
+    margin-bottom: 200px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 200px;  
+    background: #242222;
+    z-index: -1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(25px, 1fr));
+}
+
+#mainMenu {
+    display: grid;
+    grid-column: 15 / 50;
+    grid-row: 3 / 6;
+}
+
+#mainMenu ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+}
+
+#mainMenu ul li a {
+    border: 1px black solid;
+    background-color: white;
+    position: relative;
+    transform-style: preserve-3d;  /*z-index: 1*/
+    pointer-events: auto;
+    text-decoration: none;
+    color: black;
+}
+
+#mainMenu ul li  > *:first-child  {
+    padding: 5px 25px
+}
+
+#mainMenu ul li .B {
+    padding: 5px 30px
+}
+
+#mainMenu ul li .K {
+    padding: 5px 30px
+}
+
+#mainMenu ul li .D {
+    padding: 5px 22px
+}
+
+#mainMenu ul li .P {
+    padding: 5px 19px
+}
+
+#mainMenu ul li::before {
+    content: "";
+    background-color: black;
+    position:absolute;
+    display: block;
+    width: 110px;
+    height: 50px;
+    transform: translateZ(-1px); /*z-index: -1*/
+    transition: all .1s ease-out;
+    pointer-events: none;
+    transform: translate(10px, -1px);
+    
+}
+
+#mainMenu ul li:hover::before {
+    transform: translate(-4px, -9px);
+}
+
+#sideMenu {
+    display: grid; 
+    grid-column: 2 / 8;
+    grid-row: 30 / 40;
+    
+}
+
+#sideMenu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+#sideMenu ul a {
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    padding: 2px 10px;
+    border-bottom: 2px solid transparent;
+    transition-duration:0.3s;
+}
+          
+#sideMenu ul li a:hover {
+    border-color:black;
+}
+
+#logo  {
+    display: grid;
+    grid-column: 5 / 13;
+    grid-row: 3;
+    width: 100%;
+        
+}
+
+#sasuke {
+    display: grid;
+    grid-column: 16 / 56;
+    grid-row: 12;
+}
+
+#sasuke img {
+    width: 52%;
+    opacity: 70%;
+    transition: all 1s ease
+}
+
+#naruto {
+    display: grid;
+    grid-column: 36 / -1;
+    grid-row: 5;
+}
+
+#naruto img {
+    width: 100%;
+    transition: all 1s ease
+ }
+
+#wioski article {
+    background-color: white;
+    grid-column: 40 / -5;
+    grid-row: 6 / 22;
+    border: 1px solid black;
+}
+
+#wioski article p {
+    font-size: 40px;
+    text-align: center;
+    padding: 60px
+}
+
+#wioski ul {
+    display: grid;
+    list-style: none;
+    grid-row: 25 / 27;
+    grid-column: 69 / -4;
+}
+
+#czytajWiecej li a {
+    border: 1px black solid;
+    background-color: white;
+    position: relative;
+    transform-style: preserve-3d;  /*z-index: 1*/
+    pointer-events: auto;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    font-size: 20px
+}
+
+#czytajWiecej li::before {
+    content: "";
+    background-color: black;
+    position:absolute;
+    display: block;
+    width: 125px;
+    height: 60px;
+    transform: translateZ(-1px); /*z-index: -1*/
+    transition: all .1s ease-out;
+    pointer-events: none;
+    transform: translate(10px, -1px);
+    
+}
+
+#czytajWiecej li:hover::before {
+    transform: translate(-4px, -14px);
+}
+
+#wioski #kageMapa {
+    display: grid;
+    grid-column: 3 / 35;
+    grid-row: 5 / 29;
+    transform: rotate(-15deg);
+    
+}
+
+#wioski #Kage{
+    width: 100%;
+    
+}
+
+#bijuu img {
+    width: 100%;
+    grid-column: 25 / -25;
+    grid-row: 1;
+    z-index: 1
+}
+
+#bijuu article {
+    background-color: white;
+    grid-column: 10 / -10;
+    grid-row: 20 / 40;
+    border: 1px solid black;
+    display: flex
+}
+
+#bijuu article p {
+    font-size: 40px;
+    text-align: center;
+    padding: 140px 0px 0px 150px
+}
+
+#bijuu ul {
+    list-style: none;
+    flex: 30%;
+    height: 20%;
+    align-self: flex-end;
+}
+
+#klany article {
+    background-color: rgb(255, 216, 41);
+    grid-column: 5 / 36;
+    grid-row: 5 / 36;
+    border: 1px solid black;
+    border-radius: 50%
+}
+
+#klany article p {
+    font-size: 40px;
+    text-align: center;
+    padding: 160px 160px
+}
+
+#klany ul {
+    list-style: none;
+    grid-row: 32 / 40;
+    grid-column: 32 / 40;
+    background-color: rgb(255, 216, 41);
+    border: 1px solid black;
+    padding: 84px 41px;
+    border-radius: 50%
+}
+
+#klany .logo {
+    width: 90%
+}
+
+#yellowWall {
+    display: grid;
+    background-color: rgb(255, 216, 41);
+    grid-template-columns: repeat(auto-fill, minmax(25px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(25px, 1fr));
+    grid-row: 1 / -1;
+    grid-column: 43 / -1
+    
+}
+
+/*scrollmagic*/
+
+.trigger1 {
+    grid-row: 4 / 13;
+    grid-column: 5 / 15;
+    position: relative;
+    left: 2000px;
+    transition: all .9s ease;
+}
+
+.trigger1.move {
+    transform: translate(-2000px) rotate(1080deg);
+}
+
+.trigger2 {
+    grid-row: 6 / 19;
+    grid-column: 20 / 30;
+    position: relative;
+    left: 2000px;
+    transition: all .9s ease;
+}
+
+.trigger2.move {
+    transform: translate(-2000px) rotate(1080deg);
+}
+
+.trigger3 {
+    grid-row: 19 / 24;
+    grid-column: 7 / 20;
+    position: relative;
+    left: 2000px;
+    transition: all .9s ease;
+}
+
+.trigger3.move {
+    transform: translate(-2000px) rotate(1080deg);
+}
+
+.trigger4 {
+    grid-row: 22 / 31;
+    grid-column: 22 / 32;
+    position: relative;
+    left: 2000px;
+    transition: all .9s ease;
+}
+
+.trigger4.move {
+    transform: translate(-2000px) rotate(1080deg);
+}
+
+.trigger5 {
+    grid-row: 28 / 37;
+    grid-column: 6 / 16;
+    position: relative;
+    left: 2000px;
+    transition: all .9s ease;
+}
+
+.trigger5.move {
+    transform: translate(-2000px) rotate(1080deg);
+}
+
+.trigger6 {
+    grid-row: 33 / 42;
+    grid-column: 18 / 28;
+    position: relative;
+    left: 2000px;
+    transition: all .9s ease;
+}
+
+.trigger6.move {
+    transform: translate(-2000px) rotate(1080deg);
+}
+
+/* dark mode */
+
+header.darkMode {
+    background-image: linear-gradient(110deg, #8000FF 55%, #8000FF, rgb(0, 0, 0), rgb(0, 0, 0) 55%);
+}
+
+#sasuke.darkMode {
+    grid-column: 10 / 45;
+    grid-row: 7;
+}
+
+#sasuke img.darkMode {
+    opacity: 1;
+    width: 100%
+}
+
+#naruto.darkMode {
+    grid-column: 46 / -1;
+    grid-row: 10;
+}
+
+#naruto img.darkMode {
+    opacity: 70%;
+    width: 80%
+}
+
+#wioski.darkMode {
+    background-image: linear-gradient(130deg, rgb(0, 0, 0), rgb(0, 0, 0) 68%, #8000FF 68%, #8000FF);
+}
+
+#bijuu.darkMode {
+    background-image: linear-gradient(50deg, #8000FF 68%, #8000FF,  rgb(0, 0, 0), rgb(0, 0, 0) 68% );
+}
+
+#klany.darkMode {
+    background-color: black
+}
+
+#klany article.darkMode {
+    background-color: #8000FF
+}
+
+#klany ul.darkMode {
+    background-color: #8000FF
+}
+
+#yellowWall.darkMode {
+    background-color: #8000FF
+}
+
+#sideMenu a.darkMode {
+    color: white
+}
+
+#dojutsu.darkMode {
+    background-color: #8000FF
+}
+
+/* caly element */
+
+#dojutsu #oczy {
+    display: grid;
+    grid-column: 23 / 55;
+    grid-row: 1 / 20;
+    position: relative;
+    grid-template-columns: repeat(auto-fill, minmax(25px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(.5px, 1fr));
+}
+
+/* bialki oczne */
+
+#dojutsu .background {
+    width: 500px;
+    height: 300px;
+    background-color: #a6a6a6;
+    z-index: 0;
+    grid-column: 7;
+    grid-row: 100
+}
+
+/* glowna postac */
+
+#dojutsu .itachi {
+    z-index: 1;
+    width: 100%;
+    grid-column: 1 / -1
+}
+
+/* oczy pozycja */
+
+#dojutsu .eye {
+    z-index: 0;
+    position: absolute;
+    width: 40px;
+    height: 60px;
+}
+
+#dojutsu .eye.left {
+    grid-row: 293;
+    grid-column: 13
+}
+
+#dojutsu .eye.right {
+    grid-column: 20;
+    grid-row: 283
+}
+
+/* oczy */
+
+.circle {
+  width: 35px; /* 145px */
+  height: 35px; /* 145px */
+  border-radius: 50%;
+  border: 2px solid #111;
+  -webkit-box-shadow: inset 0 0 20px #111;
+}
+
+.circle-in {
+  background: #a10000;
+  position: relative;
+}
+
+.circle-in:before {
+  content: "";
+  position: absolute;
+  height: 5px; /* 25px */
+  width: 5px; /* 25px */
+  border-radius: 50%;
+  background-color: #111;
+  margin: 15px; /* 59px */
+}
+
+.circle-in:after {
+  content: "";
+  position: absolute;
+  height: 23px; /* 95px */
+  width: 23px; /* 95px */
+  border-radius: 50%;
+  border: 1px solid rgba(17, 17, 17, 0.5);
+  margin: 5px; /* 20px */
+}
+
+.curse {
+  height: 5px; /* 23px */
+  width: 5px; /* 23px */
+  position: absolute;
+  background: #111;
+  border-radius: 50%;
+}
+
+.curse:before {
+  content: "";
+  position: absolute;
+  width: 8px; /* 22px */
+  height: 7px; /* 25px */
+  border-radius: 50%;
+  border-top: 2px solid #111;
+  border-left: 5px solid transparent;
+  left: 100%;
+  margin: -10% -140%; /* -10% -95% */
+}
+
+.curse-pos1 {
+  -webkit-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+  position: absolute;
+  margin: 23px 6px; /* 85px 20px */
+}
+
+.curse-pos3 {
+  -webkit-transform: rotate(60deg);
+  transform: rotate(60deg);
+  position: absolute;
+  margin: 23px 24px; /* 85px 100px */
+} 
+
+.curse-mid {
+  -webkit-transform: rotate(-30deg);
+  transform: rotate(-50deg);
+  position: absolute;
+  margin: 5px 16px; /* 16px 58px */
+}
+
+/*
+#dojutsu .sharingan {
+    z-index: 2;
+    position: absolute;
+    width: 14%
+}
+
+#dojutsu .sharingan.left {
+    transform: translate(100px, 110px)
+}
+
+#dojutsu .sharingan.right {
+    transform: translate(404px, 110px)
+}
+*/
+
+#dojutsu article {
+    background-color: white;
+    grid-column: 13 / -12;
+    grid-row: 20 / 41;
+    border: 1px solid black;
+    display: flex;
+    z-index: 4
+}
+
+#dojutsu article p {
+    font-size: 35px;
+    text-align: center;
+    padding: 70px 0px 0px 163px
+}
+
+#dojutsu ul {
+    list-style: none;
+    flex: 90%;
+    height: 20%;
+    align-self: flex-end;
+}
+
+#dojutsu #logoUzumaki {
+    grid-row: -4;
+    grid-column: 37 / 44;
+    width: 100%
+}
+
+footer h1 {
+    display: grid;
+    font-size: 25px;
+    color: white;
+    grid-row: 7;
+    grid-column: 14 / 21;
+}
+
+footer h2 {
+    display: grid;
+    font-size: 25px;
+    color: white;
+    grid-row: 7;
+    grid-column: 57 / -7;
+}
