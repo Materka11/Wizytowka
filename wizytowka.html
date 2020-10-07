@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="wizytowka.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-16x16.png">
 </head>
 <body>
     <div id="page">
@@ -23,9 +24,9 @@
             <a href="#" class="icon-button facebook"><i class="icon-facebook"></i></a>
             <div id="circle">
                 <ul>
-                    <li><a href="#" class="firstA">O nas</a></li>
-                    <li><a href="#" class="secondA">Realizacje</a></li>
-                    <li><a href="#" class="thirdA">Kontakt</a></li>
+                    <li><a class="firstA">O nas</a></li>
+                    <li><a class="secondA">Realizacje</a></li>
+                    <li><a class="thirdA">Kontakt</a></li>
                     <div id="line"></div>
                 </ul>
             </div>
@@ -59,14 +60,35 @@
                 <div class="kafelka3"></div>
                 <div class="kafelka4"></div>
                 <div class="kafelka5"></div>
-                <div class="kafelka6">
-                </div>
+                <div class="kafelka6"></div>
                 <h1>Realizacje</h1>
             </div>
-            <div id="contact"></div>
+            <div id="contact">
+                <div id="word">Kontakt</div>
+                <article></article>
+                <form class="form" id="contactForm" method="post" action="mail.php">
+                    <div class="form-row">
+                        <label for="email">Email*</label>
+                        <input type="email" name="email" required id="email" data-error-text="Wpisz poprawny email">
+                    </div>
+                    <div class="form-row">
+                        <label for="message">Wiadomość*</label>
+                        <textarea name="message" required data-error-text="Musisz wypełnić pole" id="message"></textarea>
+                    </div>
+                    <div class="form-row">
+                        <button type="submit" class="submit-btn">
+                        Wyślij
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
         </div>
-        <footer></footer>
+         <footer class="footer">
+             <img src="img/logomain.png">
+             <h1>© 2020 Nie wiem. All rights reserved</h1>
+             <a href="#" class="icon-button facebook"><i class="icon-facebook"></i></a>
+        </footer>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
