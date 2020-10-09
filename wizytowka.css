@@ -740,3 +740,9 @@ footer h1 {
         transform: translate(-50%, -50%) rotate(360deg);
     }
 }
+
+@media screen and (max-width: 812px) {
+    
+    
+    
+} 
