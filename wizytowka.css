@@ -608,7 +608,7 @@ footer.display {
     transition: all 2s ease;
 }
 
-#portfolio h1 {
+#portfolio .napis {
     background-color: ;
     text-align: center;
     display: grid;
@@ -860,6 +860,13 @@ footer h1 {
     }
 }
 
+.mobile {
+    display: none;
+}
+
+.hidden {
+    display: contents;
+}
 @media screen and (max-width: 812px) {
     
     #home {
@@ -914,5 +921,178 @@ footer h1 {
     
     #home #swipe {
         display: block
+    } 
+
+    #page {
+        margin: 0;
+        overflow: visible;
     }
-} 
+   
+    .mobile {
+        display: block;
+        height: 200vh;
+        width: 100vw;
+    }
+
+    .text1 {
+        text-align: center;
+        margin: 10px 100px;
+        border-bottom: #FBBC05 solid 2px;
+    }
+    
+    .text2 {
+        text-align: left;
+        margin: 30px 18px;
+        font-size: 12px;
+    }
+    .circle1 {
+        display:block;
+        background: #EA4335;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin: auto;
+    }  
+    
+    .text3 {
+        text-align: center;
+        margin: 30px 17px;
+        font-size: 13px;
+        border: solid #EA4335 2px;
+        padding: 20px;
+    }
+    
+    .circle2 {
+        display:block;
+        background: #FBBC05;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin: auto;
+    }  
+
+    .text4 {
+        text-align: center;
+        margin: 30px 17px;
+        font-size: 13px;
+        border: solid #FBBC05 2px;
+        padding: 20px;
+    }
+    .circle3 {
+        display:block;
+        background: #34A853;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin: auto;
+    }  
+
+    .text5 {
+        text-align: center;
+        margin: 30px 17px;
+        font-size: 13px;
+        border: solid #34A853 2px;
+        padding: 20px;
+    } 
+    .circle4 {
+        display:block;
+        background: #4285F4;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin: auto;
+    }  
+
+    .text6 {
+        text-align: center;
+        margin: 30px 17px;
+        font-size: 13px;
+        border: solid #4285F4 2px;
+        padding: 20px;
+    }  
+
+    .circle5 {
+        display:block;
+        background: #EA4335;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin: auto;
+    }
+
+    .text7 {
+        text-align: center;
+        margin: 30px 17px;
+        font-size: 13px;
+        border: solid #EA4335 2px;
+        padding: 20px;
+    }
+
+    .circle6 {
+        display:block;
+        background: #FBBC05;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin: auto;
+    }
+
+    .text8 {
+        text-align: center;
+        margin: 30px 17px;
+        font-size: 13px;
+        border: solid #FBBC05 2px;
+        padding: 20px;
+    } 
+
+    .hidden {
+        display: none;
+    }
+
+    .text9 {
+        text-align: center;
+        margin: 20px 80px;
+        border-bottom: solid #34A853 2px
+    }  
+
+    #website {
+        margin: 30px auto;
+        width: 80%;
+        display: block;
+    }
+
+    .Stopka {
+        display: grid;
+        height : 50vh;
+        background-color: #666;
+        grid-template-columns: repeat(auto-fill, minmax(5.5vw, 1fr));
+        grid-template-rows: repeat(auto-fill, minmax(5.5vh, 1fr));
+    }
+
+
+    .Stopka img {
+        width: 100%;
+        grid-column: 8 / -8;
+        grid-row: -4;
+    }
+
+    .Stopka h1 {
+        text-align: center;
+        font-size: 10px;
+        grid-column: 1 /-1;
+        grid-row: -2;
+    }  
+
+    .icon-button {
+        position: absolute;
+        top: 10px;
+    }
+
+    .Stopka div:nth-child(1) {  
+        grid-column: 2 / -2;
+        grid-row: 2 / -5;
+        background-color: #666;
+        border: 5px solid white;
+        position: relative
+    }
+}
