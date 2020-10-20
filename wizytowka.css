@@ -118,7 +118,7 @@ footer.display {
     height: 0%
 }
 
-#home h1 {
+#home #title {
     font-size: 85px;
     grid-column: 1 / -1;
     grid-row: 6 / -13;
@@ -138,12 +138,91 @@ footer.display {
     grid-column: 1 / 2;
     grid-row: 1;
     width: 150%;
-    margin: 0 0 0 20px
+    margin: 0 0 0 20px;
+    transition: opacity 1.5s ease;
 }
+
+#home img.click {
+    opacity: 0
+}
+
 /*ikona*/
 #home .facebook {
     right: 3vh;
     top: 5vh;
+}
+
+#home #backgroundMenu {
+    width: 50px;
+    height: 50px;
+    background-color: #4285F4;
+    margin: 13px;
+    border-radius: 50%;
+    padding: 5px;
+    display: none;
+    transition: all 1s ease;
+}
+
+#home #backgroundMenu.click {
+    display: block;
+    margin: 0;
+    border-radius: 0;
+    width: 100vw;
+    height: 105px;
+    z-index: 1;
+}
+
+#home #backgroundMenu #hamburger {
+    margin: 13px 8px;
+    width: 30px
+}
+
+#home #backgroundMenu #hamburger.click {
+    margin: 20px 6px;
+}
+
+#home span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin: 5px 0;
+    position: relative;
+    background: white;
+    border-radius: 3px;
+    z-index: 1;
+    text-align: center;
+    transition: opacity .1s 1s ease;
+    transition: transform 1s ease;
+}
+
+#home span:nth-child(1).click {
+    transform: rotate(45deg)
+}
+
+#home span:nth-child(2).click {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+#home #backgroundMenu #nav {
+    opacity: 0;
+    transition: opacity 1s ease, transform .5s 1s ease;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    text-align: center;
+    visibility: hidden
+}
+
+#home #backgroundMenu #nav.click {
+    transform: translate(-50%, 0);
+    opacity: 1;
+    visibility: visible
+}
+
+#home #backgroundMenu a {
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
 }
 
 .facebook {
@@ -166,7 +245,7 @@ footer.display {
     color: white
 }
 
-#circle {
+#home #circle {
     grid-column: -4 / -1;
     grid-row: -6 / -1;
     background-color: #4285F4;
@@ -179,7 +258,7 @@ footer.display {
     z-index: 3;
 }
 
-#circle ul {
+#home #circle ul {
     list-style: none;
     grid-column: 3 / -2;
     grid-row: -9 / -2;
@@ -188,7 +267,7 @@ footer.display {
     position: relative
 }
 
-#circle ul a {
+#home #circle ul a {
     text-decoration: none;
     color: #cccccc;
     display: inline-block;
@@ -198,7 +277,7 @@ footer.display {
     cursor: pointer
 }
 
-#circle #line {
+#home #circle #line {
     display: block;
     width: 3px;
     height: 37px;
@@ -208,34 +287,74 @@ footer.display {
     transition: all 0.2s ease;
 }
 
-#circle ul .thirdA {
+#home #circle ul .thirdA {
     background-color: rgba(0,0,0,0.0);
 } 
 
-#circle ul .firstA:hover {
+#home #circle ul .firstA:hover {
     color: white
 } 
 
-#circle ul .secondA:hover {
+#home #circle ul .secondA:hover {
     color: white
 } 
 
-#circle ul .thirdA:hover {
+#home #circle ul .thirdA:hover {
     color: white
 } 
 
-#circle #line.mouseoverFirstA{
+#home #circle #line.mouseoverFirstA{
    background-color: #EA4335;
 }
 
-#circle #line.mouseoverSecondA{
+#home #circle #line.mouseoverSecondA{
    background-color: #34A853;
     transform: translate(0px, 44px)
 }
 
-#circle #line.mouseoverThirdA{
+#home #circle #line.mouseoverThirdA{
    background-color: #FBBC05;
     transform: translate(0px, 88px)
+}
+
+#home #swipe {
+    border: solid 4px rgba(255,255,255,0.5);
+    display: none;
+	position: absolute;
+	left: calc(50% - 16px);
+    bottom: 16px;
+    height: 60px;
+    width: 32px;
+    border-radius: 32px;
+}
+
+#home #swipe::before{
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    position: absolute;
+    top: 5px;
+    left: 6px;
+    border-radius: 100%;
+    animation: swipe 3s infinite;
+}
+
+@keyframes swipe {
+    0% {
+        opacity: 1;
+        transform: none
+    }
+    
+    40% {
+        opacity: 0;
+        transform: translateY(30px)
+    }
+    
+    100% {
+        opacity: 0;
+        transform: translateY(30px)
+    }
 }
 
 @keyframes animationColor {
@@ -743,6 +862,57 @@ footer h1 {
 
 @media screen and (max-width: 812px) {
     
+    #home {
+        background-color: #EA4335
+    }
     
+    #home .blue {
+        display: none
+    }
     
+    #home .red {
+        display: none
+    }
+    
+    #home .third {
+        display: none
+    }
+    
+    #home .fiveth {
+        display: none;
+    } 
+    
+    #home #circle {
+        display: none;
+    }
+    
+    #home .facebook {
+        display: none
+    }
+    
+    #home #title {
+        font-size: 28px;
+        grid-row: 7 / -12;
+    }
+    
+    #home h2 {
+        font-size: 13px;
+        margin: 15px 0 0
+    }
+    
+    #home img {
+        display: flex;
+        position: absolute;
+        width: 70px;
+        margin: 10px 0 0;
+        right: 2vw
+    }
+    
+    #home #backgroundMenu {
+        display: flex
+    }
+    
+    #home #swipe {
+        display: block
+    }
 } 

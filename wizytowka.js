@@ -84,6 +84,23 @@ $(function () {
                 }
             }); 
         }); 
+//menu
+const menu = document.querySelector("#backgroundMenu");
+const spanMenu = document.querySelectorAll("#backgroundMenu span");
+const hamburger = document.querySelector("#hamburger");
+const logo = document.querySelector("#home img");
+const navH1 = document.querySelector("#nav");
+    
+hamburger.addEventListener("click", function(){
+    menu.classList.toggle("click");
+    hamburger.classList.toggle("click");
+    logo.classList.toggle("click");
+    navH1.classList.toggle("click");
+    
+    for (e of spanMenu) {
+        e.classList.toggle("click");
+    }
+})
 
 //formularz
 function removeFieldError(field) {
@@ -215,5 +232,6 @@ form.addEventListener("submit", e => {
             submit.disabled = false;
             submit.classList.remove("loading");
         });
-    }
+    };
+    
 });
