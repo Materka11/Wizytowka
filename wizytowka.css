@@ -497,15 +497,14 @@ footer.display {
     border-right: 620px solid transparent;
     border-top: 260px solid #EC5446;
     border-bottom: 100px solid transparent;
-    z-index: 6;
     transform-origin: top;
     transform:rotateX(0deg);
     transition: all 1s 1.5s ease; 
+    z-index: 2
 }
 
 #aboutUs .letter {
     position: absolute;
-    z-index: 3;
     top: 0px;
     left: 10px;
     background: #dedede;
@@ -528,6 +527,7 @@ footer.display {
 #aboutUs .cover.move {
     transform: rotateX(180deg);
     transition: all 1s .5s ease;
+    z-index: 0
 }
 
 #aboutUs .letter.move {
@@ -643,7 +643,6 @@ footer.display {
 }
 
 #portfolio .kafelka1 { /*lewy górny róg*/
-    display: grid;
     grid-column: 4 / -60;
     grid-row: 4 / -50;
     background-color: #FBBC05;
@@ -652,10 +651,11 @@ footer.display {
 }
 
 #portfolio .kafelka1 img {
-    width: 110%;
-    display: block;
-    margin: 0 auto;
+    width: 100%;
+    /*display: block;
+    margin: 0 auto;*/
     opacity: 0;
+    height: 100%
 }
 
 #portfolio .kafelka1:hover {
@@ -669,6 +669,7 @@ footer.display {
     transition: opacity 2s 1s ease;
     opacity: 1;
 }
+
 #portfolio .kafelka2 { /*lewy dolny róg*/
     display: grid;
     grid-column: 4 / -60;
@@ -1040,7 +1041,9 @@ footer h1 {
         font-size: 30px;
         margin: 30px auto
     }
-}@media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 1200px) {
     
     footer img {
          grid-column: 15 / -15;
@@ -1082,6 +1085,10 @@ footer h1 {
     .form textarea {
         height: 18rem;
     }  
+    
+    footer .facebook {
+        grid-row: -5
+    }
 }
 
 @media screen and (max-height: 950px) {
@@ -1118,6 +1125,10 @@ footer h1 {
     .form textarea {
         height: 10rem;
     }  
+    
+    footer .facebook {
+        grid-row: -6
+    }
 }
 
 @media screen and (max-height: 650px) {
