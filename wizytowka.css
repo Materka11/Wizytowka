@@ -127,6 +127,13 @@ footer.display {
     color: white
 }
 
+@media screen and (max-width: 950px) {
+    
+    #home #title {
+        font-size: 70px
+    }
+} 
+
 #home h2 {
     font-size: 30px;
     grid-column: 1 / -1;
@@ -316,6 +323,61 @@ footer.display {
 #home #circle #line.mouseoverThirdA{
    background-color: #FBBC05;
     transform: translate(0px, 88px)
+}
+
+@media screen and (max-width: 1500px) {
+    
+    #home #circle {
+        grid-column: -5 / -1
+    }
+    
+    #home #circle ul {
+        grid-column: 4 / -2
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    
+    #home #circle {
+        grid-column: -6 / -1
+    }
+    
+    #home #circle ul {
+        grid-column: 5 / -2
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    
+    #home #circle ul {
+        grid-column: 4 / -2
+    }
+}
+
+@media screen and (max-height: 850px) {
+    
+    #home h2 {
+        grid-row: 9 / -11;
+    }
+    
+    #home #circle {
+        grid-row: -7 / -1
+    }
+    
+    #home #circle ul {
+        grid-row: -11 / -3
+    }
+}
+
+@media screen and (max-height: 650px) {
+    
+    #home #circle {
+        grid-row: -8 / -1
+    }
+    
+    #home #circle ul {
+        grid-row: -14 / -3
+    }
 }
 
 #home #swipe {
@@ -711,10 +773,15 @@ footer.display {
     background-color: #3D3D3D;
     border: solid white 5px;
     color: white;
-    font-size: 60px;
-    text-align: center;
+    
     position: relative;
     transform-style: preserve-3d; 
+}
+
+#contact #word h1 {
+    font-size: 60px;
+    text-align: center;
+    font-weight: 500
 }
 
 #contact #word:before {
@@ -808,7 +875,6 @@ footer h1 {
     color: #666;
     padding: .5rem .3rem;
     font-size: 1rem;
-    margin: 
 }
 
 .form textarea {
@@ -946,6 +1012,153 @@ footer h1 {
     }
 }
 
+@media screen and (max-width: 1650px) {
+    
+    #contact #word h1 {
+        font-size: 50px;
+        margin: 10px auto
+    }
+}
+
+@media screen and (max-width: 1650px) and (max-height: 800px) {
+    #contact #word h1 {
+        margin: 10px auto
+    }
+}
+
+@media screen and (max-width: 1450px) {
+    
+    #contact #word h1 {
+        font-size: 40px;
+        margin: 20px auto
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    
+    #contact #word h1 {
+        font-size: 30px;
+        margin: 30px auto
+    }
+}@media screen and (max-width: 1200px) {
+    
+    footer img {
+         grid-column: 15 / -15;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    
+    #contact #word h1 {
+        font-size: 20px;
+        margin: 35px auto
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    
+    #contact article {
+        grid-column: 2 / -13;
+    }
+    
+    .form {
+        grid-column: -11;
+    }
+}
+
+@media screen and (max-height: 1050px) {
+    
+    .form .form-row {
+        margin-bottom: 1rem;
+    }
+    
+    .form textarea {
+        height: 20rem;
+    }  
+}
+
+@media screen and (max-height: 1000px) {
+    
+    .form textarea {
+        height: 18rem;
+    }  
+}
+
+@media screen and (max-height: 950px) {
+    
+    .form textarea {
+        height: 16rem;
+    }  
+}
+
+@media screen and (max-height: 850px) {
+    
+    .form textarea {
+        height: 14rem;
+    }  
+}
+
+@media screen and (max-height: 800px) {
+    
+    #contact #word h1 {
+        margin: -10px
+    }
+    
+    .form textarea {
+        height: 12rem;
+    }  
+}
+
+@media screen and (max-height: 750px) {
+    
+    .form {
+        grid-row: 6
+    }
+    
+    .form textarea {
+        height: 10rem;
+    }  
+}
+
+@media screen and (max-height: 650px) {
+    
+    .form {
+        grid-row: 5
+    }
+    
+    .form textarea {
+        height: 8rem;
+    }  
+}
+
+@media screen and (max-width: 1650px) and (max-height: 800px) {
+    
+    #contact #word h1 {
+        margin: 0px auto
+    }
+}
+
+@media screen and (max-width: 1450px) and (max-height: 800px) {
+    
+    #contact #word h1 {
+        margin: 10px auto
+    }
+}
+
+@media screen and (max-width: 1300px) and (max-height: 800px) {
+    
+    #contact #word h1 {
+        margin: 15px auto
+    }
+}
+
+@media screen and (max-width: 1100px) and (max-height: 800px) {
+    
+    #contact #word h1 {
+        margin: 20px auto
+    }
+}
+
 .mobile {
     display: none;
 }
@@ -953,6 +1166,7 @@ footer h1 {
 .hidden {
     display: contents;
 }
+
 @media screen and (max-width: 812px) {
     
     #home {

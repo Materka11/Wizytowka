@@ -72,12 +72,13 @@ $(document)
                 scrollTop: x * 7.2}, function() {});
     })
 
+//pokazywanie footer
 $(function () { 
             const footer = $(".footer"); 
             $(window).scroll(function () { 
                 const scroll = $(window).scrollTop(); 
   
-                if (scroll >= 3750) { 
+                if (window.innerHeight < 720 && scroll >= 2750 || scroll >= 3750 ) { 
                     footer.addClass("display");
                 } else {
                     footer.removeClass("display");
